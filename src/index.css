@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Outfit", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Playfair Display", ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+  
+  --color-sakura-light: #FADADD;
+  --color-sakura-base: #F8C8DC;
+  --color-sakura-dusty: #E8B4C8;
+  --color-sakura-deep: #D481A2;
+  --color-sakura-accent: #9B4D6B;
+  
+  --radius-xl: 1rem;
+  --radius-2xl: 1.5rem;
+}
+
+@layer base {
+  body {
+    @apply bg-[#FFF9FB] text-gray-800 font-sans selection:bg-sakura-light selection:text-sakura-accent;
+    cursor: none;
+  }
+  
+  h1, h2, h3, h4 {
+    @apply font-serif;
+  }
+}
+
+@layer utilities {
+  .glass {
+    @apply bg-white/40 backdrop-blur-md border border-white/20;
+  }
+  
+  .sakura-gradient {
+    @apply bg-gradient-to-br from-sakura-light via-white to-sakura-dusty;
+  }
+  
+  .text-glow {
+    text-shadow: 0 0 10px rgba(248, 200, 220, 0.5);
+  }
+}
+
+/* Hide default cursor on interactive elements too */
+a, button, [role="button"] {
+  cursor: none !important;
+}
